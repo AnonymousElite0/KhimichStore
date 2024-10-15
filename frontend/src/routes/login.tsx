@@ -16,24 +16,16 @@ import {
 import {
   Link as RouterLink,
   createFileRoute,
-  redirect,
 } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
 
-import Logo from "/assets/images/fastapi-logo.svg"
+import Logo from "/assets/images/logo_bg.png"
 import type { Body_login_login_access_token as AccessToken } from "../client"
-import useAuth, { isLoggedIn } from "../hooks/useAuth"
+import useAuth from "../hooks/useAuth"
 import { emailPattern } from "../utils"
 
 export const Route = createFileRoute("/login")({
   component: Login,
-  beforeLoad: async () => {
-    if (isLoggedIn()) {
-      throw redirect({
-        to: "/",
-      })
-    }
-  },
 })
 
 function Login() {
@@ -78,7 +70,7 @@ function Login() {
       >
         <Image
           src={Logo}
-          alt="FastAPI logo"
+          alt="Khimich logo"
           height="auto"
           maxW="2xs"
           alignSelf="center"

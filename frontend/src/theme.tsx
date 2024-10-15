@@ -9,7 +9,7 @@ const disabledStyles = {
 const theme = extendTheme({
   colors: {
     ui: {
-      main: "#009688",
+      main: "#ffb5ca",
       secondary: "#EDF2F7",
       success: "#48BB78",
       danger: "#E53E3E",
@@ -17,16 +17,18 @@ const theme = extendTheme({
       dark: "#1A202C",
       darkSlate: "#252D3D",
       dim: "#A0AEC0",
+       // Definimos el degradado globalmente
+      gradient: "linear-gradient(90deg, #ffb5ca, #EDF2F7)",
     },
   },
   components: {
     Button: {
       variants: {
         primary: {
-          backgroundColor: "ui.main",
+          backgroundColor: "#ffb5ca",
           color: "ui.light",
           _hover: {
-            backgroundColor: "#00766C",
+            backgroundColor: "#ffd6ca",
           },
           _disabled: {
             ...disabledStyles,

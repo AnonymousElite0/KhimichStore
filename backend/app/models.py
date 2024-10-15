@@ -112,3 +112,40 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=40)
+
+# Shared properties
+class ProductoBase(SQLModel):
+    nombre: str = Field(max_length=255)
+    descripcion: str | None = Field(default=None, max_length=255)
+    precio: float
+    imagen: str | None = Field(default=None, max_length=255)
+    categoria: str | None = Field(default=None, max_length=255)
+
+# Properties to receive on product creation
+class ProductoCreate(ProductoBase):
+    pass
+
+# Properties to receive on product update
+class ProductoUpdate(SQLModel):
+    nombre: str | None = Field(default=None, max_length=255)
+    descripcion: str | None = Field(default=None, max_length=255)
+    precio: float | None = None
+    imagen: str | None = Field(default=None, max_length=255)
+    categoria: str | None = Field(default=None, max_length=255)
+
+# Database model, database table inferred from class name
+class Producto(ProductoBase, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    owner_id: uuid.UUID = Field(foreign_key="user.id", nullable=False, ondelete="CASCADE")
+    owner: User | None = Relationship(back_populates="productos")
+
+# Properties to return via API, id is always required
+class ProductoPublic(ProductoBase):
+    id: uuid.UUID
+    owner_id: uuid.UUID
+
+class ProductosPublic(SQLModel):
+    data: list[ProductoPublic]
+    count: int
+
+
