@@ -22,6 +22,7 @@ import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutIndexImport } from './routes/_layout/index'
 import { Route as ProductosDamasImport } from './routes/productos/damas'
 import { Route as ProductosCaballerosImport } from './routes/productos/caballeros'
+import { Route as PagesCartPagesImport } from './routes/pages/CartPages'
 import { Route as LayoutSettingsImport } from './routes/_layout/settings'
 import { Route as LayoutItemsImport } from './routes/_layout/items'
 import { Route as LayoutAdminImport } from './routes/_layout/admin'
@@ -80,6 +81,11 @@ const ProductosDamasRoute = ProductosDamasImport.update({
 
 const ProductosCaballerosRoute = ProductosCaballerosImport.update({
   path: '/productos/caballeros',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PagesCartPagesRoute = PagesCartPagesImport.update({
+  path: '/pages/CartPages',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -146,6 +152,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutSettingsImport
       parentRoute: typeof LayoutImport
     }
+    '/pages/CartPages': {
+      preLoaderRoute: typeof PagesCartPagesImport
+      parentRoute: typeof rootRoute
+    }
     '/productos/caballeros': {
       preLoaderRoute: typeof ProductosCaballerosImport
       parentRoute: typeof rootRoute
@@ -177,6 +187,7 @@ export const routeTree = rootRoute.addChildren([
   RecoverPasswordRoute,
   ResetPasswordRoute,
   SignupRoute,
+  PagesCartPagesRoute,
   ProductosCaballerosRoute,
   ProductosDamasRoute,
 ])

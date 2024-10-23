@@ -24,31 +24,27 @@
 
 ### Dashboard Login
 
-[![API docs](img/login.png)]()
+[![API docs](img/login-pc.png)]()
 
-### Dashboard - Admin
+### Dashboard Login movil
 
-[![API docs](img/dashboard.png)]()
+[![API docs](img/login-movil.png)]()
 
-### Dashboard - Create User
+### HomePage 
 
-[![API docs](img/dashboard-create.png)]()
+[![API docs](img/homepage.png)]()
+
+### HomePage-movil
+
+[![API docs](img/homepage-movil.png)]()
+
+### Feature-pc
+
+[![API docs](img/feature-pc.png)]()
 
 ### Dashboard - Items
 
 [![API docs](img/dashboard-items.png)]()
-
-### Dashboard - User Settings
-
-[![API docs](img/dashboard-user-settings.png)]()
-
-### Dashboard - Dark Mode
-
-[![API docs](img/dashboard-dark.png)]()
-
-### Interactive API Documentation
-
-[![API docs](img/docs.png)]()
 
 
 ### Configure

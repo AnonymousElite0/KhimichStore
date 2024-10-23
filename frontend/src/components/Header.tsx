@@ -12,7 +12,7 @@ export function Header(){
             khimich store
           </h1>
           <div className="text-lg text-gray-800 space-y-2">
-            <p className="font-semibold">TIENDA VIRTUAL 🌸</p>
+            <p className="font-semibold">TIENDA VIRTUAL & FISICA 🌸</p>
             <p className="flex items-center">
               <span role="img" aria-label="lock" className="mr-2">🔒</span>Entrega inmediata
             </p>
@@ -23,9 +23,16 @@ export function Header(){
               <span role="img" aria-label="truck" className="mr-2">🚚</span>Envíos a todo el país / pagos contraentrega MONTERÍA
             </p>
           </div>
-          <button className="mt-6 bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition duration-300">
-            Compra ahora
-          </button>
+          <button className="mt-6 bg-black text-white px-6 py-2 rounded-lg hover:bg-[#ffb5ca] transition duration-300 flex items-center">
+      <div className="flex items-center">
+        <img 
+          src="./assets/images/store_logo.png" 
+          alt="Logo de la Tienda" 
+          className="w-6 h-6 mr-2" 
+        />
+        <span>Compra ahora</span>
+      </div>
+    </button>
         </div>
 
         {/* Logo a la derecha */}

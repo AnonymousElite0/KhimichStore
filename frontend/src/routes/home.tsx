@@ -3,6 +3,7 @@ import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import { Header } from "../components/Header";
 import { FeatureSection } from "../components/FeatureSection";
+import { WhatsAppButton } from "../components/WhatsappButton";
 
 export const Route = createFileRoute("/home")({
     component: Home,
@@ -16,6 +17,7 @@ function Home(){
                 <Navbar/>
                 <Header/>
                 <FeatureSection/>
+                <WhatsAppButton/>
                 <Footer/>
         </div>
     )
